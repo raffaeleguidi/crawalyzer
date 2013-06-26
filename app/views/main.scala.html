@@ -1,4 +1,5 @@
 @(title: String)(content: Html)
+@import tags._
 
 <!DOCTYPE html>
 
@@ -11,5 +12,24 @@
     </head>
     <body>
         @content
+
+        <!-- <script type="text/javascript" async="true" src="http://locale.ilromoletto.it:9000/crwlzr.js/123456"></script> -->
+        
+        <script type="text/javascript" >
+        var _crwlzr = _crwlzr || [];
+        _crwlzr.push(['account', '123456']);
+        
+        (function() {
+		  var scrpt = document.createElement('script'); scrpt.type = 'text/javascript'; scrpt.async = true;
+		  scrpt.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'locale.ilromoletto.it:9000/crwlzr.js/' + _crwlzr[0][1];
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(scrpt, s);
+		})();
+        </script>
+        
+        <script type="text/javascript" >
+	 		console.log("(da fuori)_crwlzr[0]=" + _crwlzr[0]);
+     	</script>
     </body>
 </html>
+
+

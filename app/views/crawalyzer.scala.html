@@ -1,0 +1,21 @@
+@(account: String)
+
+@*
+@tags.ga(account)
+*@
+
+_crwlzr.ref = location.href;
+_crwlzr.account=_crwlzr[0][1];
+
+_crwlzr.log = function () {
+	console.log('account: ' + _crwlzr.account );
+    console.log('ref: ' + _crwlzr.ref);
+    console.log("_crwlzr[0]=" + _crwlzr[0]);
+}
+
+_crwlzr.exec = function () {
+	alert('@routes.Application.push("ciao")');
+	_crwlzr.log();
+}
+
+_crwlzr.log();
