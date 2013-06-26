@@ -1,16 +1,60 @@
 @(title: String)(content: Html)
 @import tags._
-
 <!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
 
-<html>
-    <head>
-        <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-    </head>
-    <body>
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Your Page Title Here :)</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="@routes.Assets.at("stylesheets/base.css")">
+	<link rel="stylesheet" href="@routes.Assets.at("stylesheets/skeleton.css")">
+	<link rel="stylesheet" href="@routes.Assets.at("stylesheets/layout.css")">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="@routes.Assets.at("images/favicon.ico")">
+	<link rel="apple-touch-icon" href="@routes.Assets.at("mages/apple-touch-icon.png")">
+	<link rel="apple-touch-icon" sizes="72x72" href="@routes.Assets.at("images/apple-touch-icon-72x72.png")">
+	<link rel="apple-touch-icon" sizes="114x114" href="@routes.Assets.at("images/apple-touch-icon-114x114.png")">
+	
+	<style type="text/css">
+	#grid .column, #grid .columns {
+		background: #ddd;
+		height: 25px;
+		line-height: 25px;
+		margin-bottom: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #555;
+		font-size: 12px;
+		font-weight: bold;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+	}
+	</style>
+
+</head>
+<body>
+	<!-- Primary Page Layout ================================================== -->
         @content
 
         <!-- <script type="text/javascript" async="true" src="http://locale.ilromoletto.it:9000/crwlzr.js/123456"></script> -->
@@ -29,7 +73,8 @@
         <script type="text/javascript" >
 	 		console.log("(da fuori)_crwlzr[0]=" + _crwlzr[0]);
      	</script>
-    </body>
+    
+
+	<!-- End Document ================================================== -->
+	</body>
 </html>
-
-

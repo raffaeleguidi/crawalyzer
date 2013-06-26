@@ -1,9 +1,86 @@
 @(user: models.User)
 
 @main("Welcome to Crawalyzer") {
+
+<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+		<div class="sixteen columns"> 
+			<h1 class="remove-bottom" style="margin-top: 40px">Crawalyzer</h1>
+			<h5>hi, @user.name</h5>
+			<hr />
+		</div>
+		<div class="one-third column">
+			<h3>About Skeleton?</h3>
+			<p>Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.</p>
+			<p><a href="#" onclick="_crwlzr.exec()">test</a></p>
+		</div>
+		<div class="one-third column">
+			<h3>Three Core Principles</h3>
+			<p>Skeleton is built on three core principles:</p>
+			<ul class="square">
+				<li><strong>A Responsive Grid Down To Mobile</strong>: Elegant scaling from a browser to tablets to mobile.</li>
+				<li><strong>Fast to Start</strong>: It's a tool for rapid development with best practices</li>
+				<li><strong>Style Agnostic</strong>: It provides the most basic, beautiful styles, but is meant to be overwritten.</li>
+			</ul>
+		</div>
+		<div class="one-third column">
+			<h3>Docs &amp; Support</h3>
+			
+		</div>
+		<hr clear="all" />
+		<div class="three columns sidebar">
+			<nav>
+				<h3 id="logo">Skeleton</h3>
+				<ul>
+					<li><a href="#whatAndWhy">What &amp; Why</a></li>
+					<li><a href="#grid">Grid</a></li>
+					<li><a href="#typography">Typography</a></li>
+					<li><a href="#buttons">Buttons</a></li>
+					<li><a href="#forms">Forms</a></li>
+					<li><a href="#mediaQueries">Media Queries</a></li>
+					<li><a href="#support">Support</a></li>
+					<li><a href="#examples">Examples</a></li>
+					<li><a href="#download">Download</a></li>
+					<li><a href="#licenseandlog">License &amp; Log</a></li>
+				</ul>
+				
+			</nav>
+			&nbsp;
+		</div>		<div class="twelve columns offset-by-one content">
+			<div class="doc-section clearfix" id="grid">
+				<h3>The Grid</h3>
+				<p>Skeleton's base grid is a variation of the 960 grid system. The syntax is simple and it's effective cross browser, but the awesome part is that it also has the flexibility to go mobile like a champ. <strong>Go ahead, resize the browser and watch as the layout reacts!</strong></p>
+				
+				<div class="example-grid">
+					<div class="one column alpha">One</div>
+					<div class="eleven columns omega">Eleven</div>
+					<div class="two columns alpha">Two</div>
+					<div class="ten columns omega">Ten</div>
+					<div class="three columns alpha">Three</div>
+					<div class="nine columns omega">Nine</div>
+					<div class="four columns alpha">Four</div>
+					<div class="eight columns omega">Eight</div>
+					<div class="five columns alpha">Five</div>
+					<div class="seven columns omega">Seven</div>
+					<div class="six columns alpha">Six</div>
+					<div class="six columns omega">Six</div>
+					<div class="seven columns alpha">Seven</div>
+					<div class="five columns omega">Five</div>
+					<div class="eight columns alpha">Eight</div>
+					<div class="four  columns omega">Four</div>
+					<div class="nine columns alpha">Nine</div>
+					<div class="three columns omega">Three</div>
+					<div class="ten columns alpha">Ten</div>
+					<div class="two columns omega">Two</div>
+					<div class="eleven columns alpha">Eleven</div>
+					<div class="one column omega">One</div>
+				</div>
+			
+			</div>
+		</div>
+	</div><!-- container -->
     
-    <h1>hi, @user.name</h1>
-    
-    <p><a href="#" onclick="_crwlzr.exec()">test</a></p>
+
     
 }
