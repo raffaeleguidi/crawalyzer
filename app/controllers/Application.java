@@ -1,20 +1,18 @@
 package controllers;
 
-import com.mongodb.MongoException.DuplicateKey;
-
 import controllers.composites.CookieManagement;
 import controllers.composites.Logged;
 
 import models.User;
 
 import play.*;
-import play.mvc.Http.Cookie;
 import play.libs.F.Promise;
 import play.libs.WS;
 import play.libs.WS.Response;
 import play.mvc.*;
 
 import views.html.*;
+
 @With({Logged.class, CookieManagement.class})
 public class Application extends Controller {
 	private static User user() {
