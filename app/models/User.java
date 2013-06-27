@@ -41,4 +41,8 @@ public class User {
         return users().findOne("{name: #}", name).as(User.class);
     }
 
+	public static User findById(String _id) {
+		return users().findOne("{_uid: #}", _id).as(User.class);
+	}
+
 }
