@@ -3,6 +3,7 @@ package models;
 import org.bson.types.ObjectId;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.jongo.MongoCollection;
+import org.jongo.Oid;
 
 import uk.co.panaxiom.playjongo.PlayJongo;
 
@@ -42,7 +43,7 @@ public class User {
     }
 
 	public static User findById(String _id) {
-		return users().findOne("{_uid: #}", _id).as(User.class);
+		return users().findOne(Oid.withOid(_id)).as(User.class);
 	}
 
 }

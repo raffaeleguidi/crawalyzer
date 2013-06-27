@@ -1,4 +1,4 @@
-package controllers;
+package controllers.composites;
 
 import play.Logger;
 import play.mvc.Action;
@@ -9,7 +9,6 @@ import play.mvc.Result;
 public class Logged extends Action<Logged> {
 	@Override
 	public Result call(Context ctx) throws Throwable {
-		// TODO Auto-generated method stub
 		Logger.info("ctx: " + ctx.request().path());
 		return delegate.call(ctx);
 	}
