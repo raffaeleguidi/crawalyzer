@@ -1,7 +1,6 @@
 package models;
 
 import org.bson.types.ObjectId;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.jongo.MongoCollection;
 import org.jongo.Oid;
 

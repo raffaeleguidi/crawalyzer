@@ -3,7 +3,6 @@ package controllers.composites;
 import models.User;
 import play.Logger;
 import play.mvc.Action;
-import play.mvc.Http;
 import play.mvc.Http.Context;
 import play.mvc.Http.Cookie;
 import play.mvc.Http.Response;

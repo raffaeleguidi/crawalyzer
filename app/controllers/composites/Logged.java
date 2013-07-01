@@ -2,7 +2,6 @@ package controllers.composites;
 
 import play.Logger;
 import play.mvc.Action;
-import play.mvc.Http;
 import play.mvc.Http.Context;
 import play.mvc.Result;
 
