@@ -1,20 +1,16 @@
 package controllers;
 
+import models.Page;
+import models.User;
+import play.Logger;
+import play.mvc.*;
+import views.html.crawalyzer;
+import views.html.index;
+
 import com.mongodb.MongoException.DuplicateKey;
 
 import controllers.composites.CookieManagement;
 import controllers.composites.Logged;
-
-import models.Page;
-import models.User;
-
-import play.*;
-import play.libs.F.Promise;
-import play.libs.WS;
-import play.libs.WS.Response;
-import play.mvc.*;
-
-import views.html.*;
 
 @With({Logged.class, CookieManagement.class})
 public class Application extends Controller {

@@ -4,10 +4,18 @@ import java.util.Date;
 
 import org.jongo.MongoCollection;
 import org.jongo.Oid;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
+import scala.concurrent.Future;
 import uk.co.panaxiom.playjongo.PlayJongo;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoException.DuplicateKey;
+
+
+import play.libs.F.Promise;
+import play.libs.WS;
 
 
 public class Page extends JongoModel {
@@ -22,7 +30,8 @@ public class Page extends JongoModel {
 
     protected static MongoCollection items() {
 		MongoCollection pages = PlayJongo.getCollection("pages");
-		pages.ensureIndex("{ \"url\": 1 }, { unique: true }");
+		//pages.ensureIndex("{ \"url\": 1 }, { unique: true, dropDups: true }");
+		PlayJongo.mongo().getDB(PlayJongo.getDatabase().getName()).getCollection("pages").ensureIndex(new BasicDBObject("url", 1), new BasicDBObject("unique", true));
 	    return pages;
 	}
     
@@ -68,6 +77,20 @@ public class Page extends JongoModel {
 			items().remove("{url: #}", url);
 			save();
 		}
+	}
+
+	public void crawl() {
+		try {
+			Promise<WS.Response> page = WS.url(url).get();
+			Document doc = Jsoup.parse(page.get().getBody());
+			title = doc.getElementsByTag("title").val();
+			body = doc.body().text();
+			date = new Date();
+			this.crawled = true;		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 	}
 
 }

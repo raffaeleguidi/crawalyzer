@@ -19,7 +19,6 @@ public class User {
 
 	public static MongoCollection users() {
 		MongoCollection users = PlayJongo.getCollection("users");
-		users.ensureIndex("{ \"name\": 1 }, { unique: true }");
         return users;
     }
 
