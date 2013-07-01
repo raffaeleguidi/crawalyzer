@@ -5,7 +5,8 @@
 # Home page
 GET     /                           controllers.Application.index()
 GET     /crwlzr.js/:account			controllers.Application.crawalyzer(account: String)
-GET     /push/:what					controllers.Application.push(what: String)
+GET     /push/						controllers.Application.push()
+#GET     /push/:what/:title			controllers.Application.push(what: String, title: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

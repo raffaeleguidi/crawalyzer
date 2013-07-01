@@ -1,9 +1,5 @@
 @(account: String)
 
-@*
-@tags.ga(account)
-*@
-
 _crwlzr.ref = location.href;
 _crwlzr.account=_crwlzr[0][1];
 
@@ -14,8 +10,12 @@ _crwlzr.log = function () {
 }
 
 _crwlzr.exec = function () {
-	alert('@routes.Application.push("ciao")');
-	_crwlzr.log();
+	var xhReq = new XMLHttpRequest();
+	xhReq.open("GET", '@routes.Application.push()' , false);
+	xhReq.send(null);
+	var serverResponse = xhReq.responseText;
+	console.log(serverResponse);
 }
 
 _crwlzr.log();
+_crwlzr.exec();
