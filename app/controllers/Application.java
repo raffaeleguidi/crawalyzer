@@ -23,7 +23,11 @@ public class Application extends Controller {
         return ok(index.render(user));
     }
 	
-    public static Result crawalyzer(String account) {
+	public static Result test(String what) {
+        return ok(index.render(user()));
+    }
+
+	public static Result crawalyzer(String account) {
     	return ok(crawalyzer.render(account)).as("text/javascript");
     }
     public static Result push() {

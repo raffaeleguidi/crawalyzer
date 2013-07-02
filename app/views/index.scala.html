@@ -6,14 +6,17 @@
 
 	<div class="container">
 		<div class="sixteen columns"> 
-			<h1 class="remove-bottom" style="margin-top: 40px">Crawalyzer</h1>
+			<h1 class="remove-bottom" style="margin-top: 40px"><a href="@routes.Application.index()">Crawalyzer</a></h1>
 			@if(user != null){<h5>hi, @user.name</h5>}
 			<hr />
 		</div>
 		<div class="one-third column">
 			<h3>About Skeleton?</h3>
 			<p>Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.</p>
-			<p><a href="#" onclick="_crwlzr.exec()">test</a></p>
+			<p><a href="@routes.Application.test("one")">test 1</a></p>
+			<p><a href="@routes.Application.test("two")">test 2</a></p>
+			<p><a href="@routes.Application.test("three")">test 3</a></p>
+			<!-- <p><a href="#" onclick="_crwlzr.exec()">test</a></p> -->
 		</div>
 		<div class="one-third column">
 			<h3>Three Core Principles</h3>
