@@ -27,6 +27,7 @@ public class Page extends JongoModel {
     protected static MongoCollection items() {
 		MongoCollection pages = PlayJongo.getCollection("pages");
 		pages.ensureIndex("{ \"url\": 1 }", "{ unique: true, dropDups: true }");
+		pages.ensureIndex("{title: \"text\",body: \"text\"}");
 		// in case of future use but not needed anymore
 		//PlayJongo.mongo().getDB(PlayJongo.getDatabase().getName()).getCollection("pages").ensureIndex(new BasicDBObject("url", 1), new BasicDBObject("unique", true));
 	    return pages;
