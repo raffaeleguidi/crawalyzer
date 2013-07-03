@@ -35,9 +35,6 @@ public class Page extends JongoModel {
     
     public static Iterable<Page> notCrawled() {
 		 Iterable<Page> pages = Page.pages().find("{crawled: false}").sort("{date: 1}").as(Page.class);
-//		 for (Page page : pages) {
-//			 Logger.info("crawling " + page.url);
-//		 }
 		 return pages;
     }
     
