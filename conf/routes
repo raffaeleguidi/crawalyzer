@@ -6,7 +6,7 @@
 GET     /                           controllers.Application.index()
 GET     /crwlzr.js/:account			controllers.Application.crawalyzer(account: String)
 GET     /push/						controllers.Application.push()
-GET     /test/:what					controllers.Application.test(what: String)
+GET     /sample/:what				controllers.Application.sample(what: String)
 #GET    /push/:what/:title			controllers.Application.push(what: String, title: String)
 
 # Map static resources from the /public folder to the /assets URL path

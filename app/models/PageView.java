@@ -15,14 +15,14 @@ import uk.co.panaxiom.playjongo.PlayJongo;
 import com.mongodb.MongoException.DuplicateKey;
 
 
-public class PageViews extends JongoModel {
+public class PageView extends JongoModel {
 	
     public ObjectId _pageId;
     public ObjectId _userId;
     public Date date = new Date();
 
-	public PageViews (String url, ObjectId userId) {
-		this._pageId = Page.findByUrl(url)._id;
+	public PageView (ObjectId pageId, ObjectId userId) {
+		this._pageId = pageId;
 		this._userId = userId;
 	}
 	
@@ -44,6 +44,6 @@ public class PageViews extends JongoModel {
 	}
 
 	public static JongoModel findById(String _id) {
-		return items().findOne(Oid.withOid(_id)).as(PageViews.class);
+		return items().findOne(Oid.withOid(_id)).as(PageView.class);
 	}
 }

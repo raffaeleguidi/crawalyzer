@@ -1,11 +1,9 @@
 package controllers;
 
-import models.Page;
-import models.User;
+import models.*;
 import play.Logger;
 import play.mvc.*;
-import views.html.crawalyzer;
-import views.html.index;
+import views.html.*;
 
 import com.mongodb.MongoException.DuplicateKey;
 
@@ -23,8 +21,8 @@ public class Application extends Controller {
         return ok(index.render(user));
     }
 	
-	public static Result test(String what) {
-        return ok(index.render(user()));
+	public static Result sample(String what) {
+        return ok(sample.render(what));
     }
 
 	public static Result crawalyzer(String account) {
@@ -36,6 +34,7 @@ public class Application extends Controller {
     	try {
         	page.insert();
         	Logger.info("created: " + page.url);
+        	new PageView(page._id, user()._id).save();
         	return Results.created("created: " + page.url);
 		} catch (DuplicateKey ex) {
         	Logger.info("viewed: " + page.url);

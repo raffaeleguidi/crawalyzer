@@ -1,0 +1,18 @@
+@(message: String)
+
+@main("ciao") {
+	<div class="container">
+		<div class="sixteen columns"> 
+			<h1 class="remove-bottom" style="margin-top: 40px"><a href="@routes.Application.index()">Crawalyzer</a></h1>
+			<hr />
+		</div>
+		<div class="sixteen columns">
+			<h3>About sample Page</h3>
+			<p>This is the sample page number @message</p>
+			<p><a href="@routes.Application.sample("one")">test 1</a></p>
+			<p><a href="@routes.Application.sample("two")">test 2</a></p>
+			<p><a href="@routes.Application.sample("three")">test 3</a></p>
+			<!-- <p><a href="#" onclick="_crwlzr.exec()">test</a></p> -->
+		</div>
+	</div><!-- container -->   
+}
