@@ -11,6 +11,8 @@ import play.libs.F.Promise;
 import play.libs.WS;
 import uk.co.panaxiom.playjongo.PlayJongo;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.CommandResult;
 import com.mongodb.MongoException.DuplicateKey;
 
 
@@ -36,6 +38,13 @@ public class Page extends JongoModel {
     public static Iterable<Page> notCrawled() {
 		 Iterable<Page> pages = Page.pages().find("{crawled: false}").sort("{date: 1}").as(Page.class);
 		 return pages;
+    }
+    
+    public static CommandResult search(String text) {
+    	 BasicDBObject searchCommand = new BasicDBObject();
+    	 searchCommand.put("text", new BasicDBObject().append("search", text));
+    	 CommandResult result = PlayJongo.mongo().getDB("pages").command(searchCommand);
+		 return result;
     }
     
     public static MongoCollection pages() {
@@ -93,7 +102,6 @@ public class Page extends JongoModel {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-
 	}
 
 }

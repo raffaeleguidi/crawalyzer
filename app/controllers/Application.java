@@ -28,6 +28,11 @@ public class Application extends Controller {
 	public static Result crawalyzer(String account) {
     	return ok(crawalyzer.render(account)).as("text/javascript");
     }
+	
+	public static Result search(String q) {
+		return ok(Page.search(q).toString());
+	}
+	
     public static Result push() {
     	Page page = new Page();
     	page.url = request().getHeader("Referer");

@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index()
 GET     /crwlzr.js/:account			controllers.Application.crawalyzer(account: String)
 GET     /push/						controllers.Application.push()
+GET     /search/:q					controllers.Application.search(q: String)
 GET     /sample/:what				controllers.Application.sample(what: String)
 #GET    /push/:what/:title			controllers.Application.push(what: String, title: String)
 
