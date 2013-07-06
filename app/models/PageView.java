@@ -5,15 +5,8 @@ import java.util.Date;
 import org.bson.types.ObjectId;
 import org.jongo.MongoCollection;
 import org.jongo.Oid;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
-import play.libs.F.Promise;
-import play.libs.WS;
 import uk.co.panaxiom.playjongo.PlayJongo;
-
-import com.mongodb.MongoException.DuplicateKey;
-
 
 public class PageView extends JongoModel {
 	

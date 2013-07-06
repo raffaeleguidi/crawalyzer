@@ -46,15 +46,5 @@ public class Application extends Controller {
 	    	return ok("viewed: " + page.url);
 		}
     }
-    public static Result push(String what, String title) {
-    	Page page = new Page();
-    	page.url = what;
-    	page.title = title;
-    	try {
-        	page.insert();
-        	return Results.created("created: " + what);
-		} catch (DuplicateKey ex) {
-	    	return ok("viewed: " + what);
-		}
-    }
+
 }

@@ -41,10 +41,11 @@ public class Page extends JongoModel {
     }
     
     public static CommandResult search(String text) {
-    	 BasicDBObject searchCommand = new BasicDBObject();
-    	 searchCommand.put("text", new BasicDBObject().append("search", text));
-    	 CommandResult result = PlayJongo.mongo().getDB("pages").command(searchCommand);
-		 return result;
+    	 final BasicDBObject searchCommand = new BasicDBObject();
+    	 searchCommand.put("text", "pages");
+    	 searchCommand.put("search", text);
+    	 final CommandResult commandResult = PlayJongo.getDatabase().command(searchCommand);
+		 return commandResult;
     }
     
     public static MongoCollection pages() {

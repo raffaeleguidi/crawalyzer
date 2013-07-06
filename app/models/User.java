@@ -1,12 +1,11 @@
 package models;
 
-import org.bson.types.ObjectId;
 import org.jongo.MongoCollection;
 import org.jongo.Oid;
 
 import uk.co.panaxiom.playjongo.PlayJongo;
 
-public class User {
+public class User extends JongoModel {
 	
     public User(String name) {
 		this.name = name;
@@ -21,7 +20,6 @@ public class User {
         return users;
     }
 
-    public ObjectId _id;
 	public long number;
 	public String name;
 

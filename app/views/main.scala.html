@@ -41,6 +41,21 @@
 
 	</style>
 
+	<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")"></script>
+	
+	<script>
+		$(document).ready(function() {
+			$(".searchlink").click(function() {
+				$.ajax({
+				  url: "/search?q=iphone",
+				  context: document.body
+				}).done(function(data) {
+					alert(data);
+				});
+			});  // Handler for .ready() called.
+		});
+	</script>
+
 </head>
 <body>
 	<!-- Primary Page Layout ================================================== -->
