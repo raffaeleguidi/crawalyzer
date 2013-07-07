@@ -47,10 +47,13 @@
 		$(document).ready(function() {
 			$(".searchlink").click(function() {
 				$.ajax({
-				  url: "/search?q=iphone",
+				  url: "/search?q=test",
 				  context: document.body
 				}).done(function(data) {
-					alert(data);
+					var cmd = JSON.parse(data);
+					$.each(cmd.results, function() {
+						console.log("page: " + this.obj.url + " score:" +  this.score);
+					})
 				});
 			});  // Handler for .ready() called.
 		});
